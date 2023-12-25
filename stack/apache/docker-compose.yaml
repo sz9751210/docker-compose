@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  apache:
+    image: httpd:alpine3.19  # Official Apache HTTP Server image
+    container_name: apache-web
+    ports:
+      - "80:80"  # Map host port 80 to container port 80
+    volumes:
+      - ./html:/usr/local/apache2/htdocs  # Mount a local directory to serve web content
+    restart: always
