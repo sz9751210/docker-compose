@@ -1,0 +1,17 @@
+services:
+  clickhouse_unittest_db:
+    container_name: clickhouse
+    image: clickhouse/clickhouse-server:23.8-alpine
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+    environment:
+      CLICKHOUSE_DB: test_db
+      CLICKHOUSE_USER: test_user
+      CLICKHOUSE_PASSWORD: test_password
+      CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: 1
+    ports:
+      - '9000:9000'
+      - '8123:8123'
