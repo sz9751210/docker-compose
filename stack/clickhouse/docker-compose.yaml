@@ -15,3 +15,9 @@ services:
     ports:
       - '9000:9000'
       - '8123:8123'
+    healthcheck:
+      test: ["CMD-SHELL", "clickhouse-client --user=test_user --password=test_password --query='SHOW USERS'"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
