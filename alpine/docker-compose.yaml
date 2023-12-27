@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  alpine:
+    image: alpine:3.19
+    container_name: alpine
+    command: ["/bin/sh", "-c", "while true; do sleep 1000; done"]
