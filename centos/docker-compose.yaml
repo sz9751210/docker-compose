@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  centos7:
+    image: centos:7
+    container_name: centos7
+    command: ["/bin/bash", "-c", "while true; do sleep 1000; done"]
