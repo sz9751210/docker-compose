@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  mysql-db:
+    image: mysql:5.7
+    container_name: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: changeme
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: changeme
+    volumes:
+      - mysql-data:/var/lib/mysql
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "mysql --user=root --password=changeme  --execute \"SELECT User FROM mysql.user\""]
+      timeout: 20s
+      retries: 10
+
+volumes:
+  mysql-data:
+
+networks:
+  default:
+    driver: bridge
