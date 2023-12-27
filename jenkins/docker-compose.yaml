@@ -3,6 +3,7 @@ version: '3.8'
 services:
   jenkins:
     image: jenkins/jenkins:lts
+    container_name: jenkins
     ports:
       - "8080:8080"  # Jenkins web interface
       - "50000:50000"  # Jenkins agent port
@@ -10,6 +11,8 @@ services:
       - jenkins-data:/var/jenkins_home
     environment:
       - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
+      - TZ=Asia/Taipei
+      - JAVA_OPTS=-Duser.timezone=Asia/Taipei
     restart: unless-stopped
 
 volumes:
