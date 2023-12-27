@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  ubuntu:
+    image: ubuntu:22.04
+    container_name: ubuntu
+    command: bash -c "while true; do sleep 1000; done"  # Keeps the container running
