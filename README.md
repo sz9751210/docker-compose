@@ -23,6 +23,14 @@ This project provides a Docker Compose setup designed for DevOps and Site Reliab
 
 ## Usage
 
+### Linux distro
+
+| Name   | Version |
+| ------ | ------- |
+| Ubuntu | 22.04   |
+| CentOS | 7       |
+| Alpine | 3.19    |
+
 ### webservice
 
 | Name   | Version |
@@ -37,6 +45,23 @@ This project provides a Docker Compose setup designed for DevOps and Site Reliab
 | MySQL      | 5.7     |
 | MongoDB    | 7.0.5   |
 | ClickHouse | 23.8    |
+| Redis      | 6       |
+
+### CICD
+
+| Name    | Version |
+| ------- | ------- |
+| Jenkins |         |
+| GitLab  |         |
+| Gitea   | 1.13.3  |
+
+### Monitor
+
+| Name       | Version |
+| ---------- | ------- |
+| Prometheus | 2.48.1  |
+| Grafana    | 8.4.4   |
+| Cadvisor   | 0.33.0  |
 
 ## Configuration
 
